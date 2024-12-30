@@ -97,43 +97,37 @@ const Home = () => {
 bg-slate-200">
       {/* Left Section with Animated Carousel */}
 
-      <div className="hero w-full lg:w-1/2 relative flex flex-col items-center justify-center dark:bg-black bg-slate-200">
-
-<div className="border flex border-red-500 w-[90%] h-full items-center justify-center">
-    <div className="flex flex-col items-center justify-center h-full w-[70%] border border-green-500">
-    <div className="flex flex-row items-start justify-start w-full h-[40%] border border-yellow-500">
-      <h1 className="text-5xl text-black dark:text-white font-bold">
-        Your Ultimate Companion for{" "}
-        <br></br>
-        <AnimatePresence mode="wait">
-          <motion.span
-            key={phrases[currentIndex].text}
-            initial={{ opacity: 0, y: 10 }} // Start invisible and slightly below
-            animate={{ opacity: 1, y: 0 }} // Fade in and move to position
-            exit={{ opacity: 0, y: -10 }} // Fade out and move slightly up
-            transition={{ duration: 0.8 }} // Smooth transition duration
-            className={`${phrases[currentIndex].color}`}
-          >
-            {phrases[currentIndex].text}
-          </motion.span>
-        </AnimatePresence>
-      </h1>
-      
-    </div>
-
-    <div >
-    <p className=" text-sm dark:text-slate-300 text-slate-700 mt-2 mx-1 text-left">
-        Are you struggling to maintain contributions and manage expenses during group trips? Expido is here with the solution. Expido provides a seamless platform for tracking shared expenses, organizing contributions, and keeping everyone on the same page. Whether you're traveling with friends or family, Expido ensures your trip is hassle-free, efficient, and memorable. Say goodbye to the confusion and hello to stress-free travel!
-      </p> 
-    </div>
-
-    </div>
-
+      <div className="hero w-full lg:w-1/2 relative flex flex-col items-center justify-center dark:bg-black bg-slate-200 p-4">
+  <div className="border flex border-red-500 w-full h-auto items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-full lg:w-[70%] border border-green-500 p-4">
+    <div className="flex flex-row items-start justify-start w-full h-auto border border-yellow-500">
+  <h1 className="text-3xl sm:text-4xl lg:text-5xl text-black dark:text-white font-bold text-left leading-snug">
+    Your Ultimate Companion for{" "}
+    <br />
+    <AnimatePresence mode="wait">
+      <motion.span
+        key={phrases[currentIndex].text}
+        initial={{ opacity: 0, y: 10 }} // Start invisible and slightly below
+        animate={{ opacity: 1, y: 0 }} // Fade in and move to position
+        exit={{ opacity: 0, y: -10 }} // Fade out and move slightly up
+        transition={{ duration: 0.8 }} // Smooth transition duration
+        className={`${phrases[currentIndex].color} items-start justify-start text-left`}
+      >
+        {phrases[currentIndex].text}
+      </motion.span>
+    </AnimatePresence>
+  </h1>
 </div>
 
 
-      
+      <div className="mt-4 flex flex-col items-start justify-start">
+        <p className="text-sm sm:text-base lg:text-lg dark:text-slate-300 text-slate-700 text-left leading-relaxed">
+          Are you struggling to maintain contributions and manage expenses during group trips? Expido is here with the solution. Expido provides a seamless platform for tracking shared expenses, organizing contributions, and keeping everyone on the same page. Whether you're traveling with friends or family, Expido ensures your trip is hassle-free, efficient, and memorable. Say goodbye to the confusion and hello to stress-free travel!
+        </p>
+      </div>
     </div>
+  </div>
+</div>
 
 
 
