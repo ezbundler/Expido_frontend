@@ -61,6 +61,13 @@ const images = [
 //       },
 //     },
 //   });
+
+
+const phrases = [
+    { text: "sharing expenses with friends", color: "text-orange-500" },
+    { text: "managing your finances", color: "text-purple-500" },
+    { text: "staying organized", color: "text-teal-600" },
+  ];
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
@@ -73,49 +80,58 @@ const Home = () => {
     return () => clearInterval(interval);
   }, []);
 
-
+    const [currentIndex, setCurrentIndex] = useState(0);
+  
+    useEffect(() => {
+      const interval = setInterval(() => {
+        setCurrentIndex((prevIndex) => (prevIndex + 1) % phrases.length);
+      }, 4000); // Change phrase every 3 seconds
+  
+      return () => clearInterval(interval);
+    }, []);
 
 
   
   return (
-    <HomeContainer className="relative ">
+    <HomeContainer className="relative lg:mt-10">
       {/* Left Section with Animated Carousel */}
 
       <div className="hero w-full lg:w-1/2 relative flex flex-col items-center justify-center dark:bg-black bg-slate-200">
-      {/* Continuous Up-Down Animation for Logo */}
-      <motion.img
-        src={homelogo}
-        alt="Home Logo"
-        className="h-[30vh] w-[25vw]"
-        animate={{
-          y: ["0px", "-15px", "0px"], // Up and down movement
-          transition: {
-            y: {
-              repeat: Infinity, // Repeat infinitely
-              repeatType: "loop", // Loop the animation
-              duration: 3.5, // Duration of each cycle
-              ease: "easeInOut", // Smooth easing
-            },
-          },
-        }}
-      />
 
-      {/* Headline with Typewriter Effect */}
-      <TypingEffect
-  text="Your Ultimate Travel Companion for Smarter, Seamless Journeys"
-  speed={90} // typing speed
-  eraseDelay={1000} // delay before erasing the text
-  cursorRenderer={(cursor) => (
-    <h1 className="text-white font-bold text-2xl mt-5">{cursor}</h1>
-  )}
-  className="text-orange-400 dark:text-white font-bold text-sm lg:text-2xl" // Ensures the text is white and bold
-/>
+<div className="border flex border-red-500 w-[90%] h-full items-center justify-center">
+    <div className="flex flex-col items-center justify-center h-full w-[70%] border border-green-500">
+    <div className="flex flex-row items-start justify-start w-full h-[40%] border border-yellow-500">
+      <h1 className="text-5xl text-black dark:text-white font-bold">
+        Your Ultimate Companion for{" "}
+        <br></br>
+        <AnimatePresence mode="wait">
+          <motion.span
+            key={phrases[currentIndex].text}
+            initial={{ opacity: 0, y: 10 }} // Start invisible and slightly below
+            animate={{ opacity: 1, y: 0 }} // Fade in and move to position
+            exit={{ opacity: 0, y: -10 }} // Fade out and move slightly up
+            transition={{ duration: 0.8 }} // Smooth transition duration
+            className={`${phrases[currentIndex].color}`}
+          >
+            {phrases[currentIndex].text}
+          </motion.span>
+        </AnimatePresence>
+      </h1>
+      
+    </div>
 
-
-      {/* Description below the headline */}
-      {/* <p className="text-white text-sm mt-4 mx-8 text-center">
+    <div >
+    <p className=" text-sm dark:text-slate-300 text-slate-700 mt-2 mx-1 text-left">
         Are you struggling to maintain contributions and manage expenses during group trips? Expido is here with the solution. Expido provides a seamless platform for tracking shared expenses, organizing contributions, and keeping everyone on the same page. Whether you're traveling with friends or family, Expido ensures your trip is hassle-free, efficient, and memorable. Say goodbye to the confusion and hello to stress-free travel!
-      </p> */}
+      </p> 
+    </div>
+
+    </div>
+
+</div>
+
+
+      
     </div>
 
 
@@ -156,3 +172,45 @@ const Home = () => {
 };
 
 export default Home;
+
+
+
+
+
+
+
+{/* Continuous Up-Down Animation for Logo */}
+      {/* <motion.img
+        src={homelogo}
+        alt="Home Logo"
+        className="h-[30vh] w-[25vw]"
+        animate={{
+          y: ["0px", "-15px", "0px"], // Up and down movement
+          transition: {
+            y: {
+              repeat: Infinity, // Repeat infinitely
+              repeatType: "loop", // Loop the animation
+              duration: 3.5, // Duration of each cycle
+              ease: "easeInOut", // Smooth easing
+            },
+          },
+        }}
+      /> */}
+
+
+      {/* Headline with Typewriter Effect */}
+      {/* <TypingEffect
+  text="Your Ultimate Travel Companion for Smarter, Seamless Journeys"
+  speed={90} // typing speed
+  eraseDelay={1000} // delay before erasing the text
+  cursorRenderer={(cursor) => (
+    <h1 className="text-white font-bold text-2xl mt-5">{cursor}</h1>
+  )}
+  className="text-orange-400 dark:text-white font-bold text-sm lg:text-2xl" // Ensures the text is white and bold
+/> */}
+
+
+      {/* Description below the headline */}
+      {/* <p className="text-white text-sm mt-4 mx-8 text-center">
+        Are you struggling to maintain contributions and manage expenses during group trips? Expido is here with the solution. Expido provides a seamless platform for tracking shared expenses, organizing contributions, and keeping everyone on the same page. Whether you're traveling with friends or family, Expido ensures your trip is hassle-free, efficient, and memorable. Say goodbye to the confusion and hello to stress-free travel!
+      </p> */}

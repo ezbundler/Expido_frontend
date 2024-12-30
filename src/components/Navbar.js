@@ -17,7 +17,7 @@ import logo from "../images/navLogo.png";
 import ThemeToggle from './ThemeToggler';
 
 const Logo = styled.img`
-  height: 80px;
+  height: 100px;
 //   width: auto;
   cursor: pointer;
 `;
@@ -29,26 +29,24 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="static" className="bg-slate-400 dark:bg-black justify-center dark:border-b-4 border-orange-500" sx={{height:"5rem"}}>
-        <Toolbar className="flex justify-between items-center">
+      <AppBar position="static" className="bg-slate-400 dark:bg-black justify-center
+       items-center dark:border-b-4 border-orange-500" sx={{height:"5rem"}}>
+        <div className="flex lg:w-3/4 w-full justify-between px-4 items-center  ">
           {/* Logo */}
           <Link to="/">
-            <Logo className="w-24  " src={logo} alt="Navbar Logo" />
+            <Logo className="w-40  " src={logo} alt="Navbar Logo" />
           </Link>
 
-          {/* Links (hidden on small screens) */}
-          {!isSmallScreen && (
+          
+          
             <div className="flex gap-4 items-center">
-              <Link to="/" className="text-white">Home</Link>
-              <Link to="/contact" className="text-white">Contact</Link>
-              <Link to="/login" className="text-white">Login</Link>
-              <Link to="/signup" className="text-white">Sign Up</Link>
+             
               <ThemeToggle />
             </div>
-          )}
+         
 
           {/* Hamburger Menu (visible on small screens) */}
-          {isSmallScreen && (
+          {/* {isSmallScreen && (
             <IconButton
               edge="start"
               color="inherit"
@@ -57,14 +55,14 @@ const Navbar = () => {
             >
               <MenuIcon />
             </IconButton>
-          )}
-        </Toolbar>
+          )} */}
+        </div>
       </AppBar>
 
       {/* Drawer for Hamburger Menu */}
-      <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
+      {/* <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
         <div className="w-[250px] h-full flex flex-col justify-between bg-black text-white p-5">
-          {/* Close Icon */}
+          
           <IconButton
             edge="start"
             color="inherit"
@@ -75,7 +73,6 @@ const Navbar = () => {
             <CloseIcon />
           </IconButton>
 
-          {/* Drawer Links */}
           <List>
             <ListItem button component={Link} to="/" onClick={toggleDrawer(false)}>
               <ListItemText primary="Home" />
@@ -91,10 +88,9 @@ const Navbar = () => {
             </ListItem>
           </List>
 
-          {/* Theme Toggle */}
           <ThemeToggle />
         </div>
-      </Drawer>
+      </Drawer> */}
     </>
   );
 };
