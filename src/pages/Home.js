@@ -93,7 +93,8 @@ const Home = () => {
 
   
   return (
-    <HomeContainer className="relative lg:mt-10">
+    <HomeContainer className="relative lg:mt-10 dark:bg-black
+bg-slate-200">
       {/* Left Section with Animated Carousel */}
 
       <div className="hero w-full lg:w-1/2 relative flex flex-col items-center justify-center dark:bg-black bg-slate-200">

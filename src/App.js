@@ -3,7 +3,7 @@ import LandingPage from './LandingPage'
 // import "./index.css"
 const App = () => {
   return (
-    <div>
+    <div className='dark:bg-black bg-slate-200'>
         <LandingPage/>
     </div>
   )

@@ -29,7 +29,7 @@ const Navbar = () => {
 
   return (
     <>
-      <AppBar position="static" className="bg-slate-400 dark:bg-black justify-center
+      <nav  className="bg-slate-500 dark:bg-black justify-center border-b-4 dark:border-blue-600
        items-center dark:border-b-4 border-orange-500" sx={{height:"5rem"}}>
         <div className="flex lg:w-3/4 w-full justify-between px-4 items-center  ">
           {/* Logo */}
@@ -57,7 +57,7 @@ const Navbar = () => {
             </IconButton>
           )} */}
         </div>
-      </AppBar>
+      </nav>
 
       {/* Drawer for Hamburger Menu */}
       {/* <Drawer anchor="right" open={drawerOpen} onClose={toggleDrawer(false)}>
