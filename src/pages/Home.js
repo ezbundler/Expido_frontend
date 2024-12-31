@@ -64,9 +64,9 @@ const images = [
 
 
 const phrases = [
-    { text: "sharing expenses with friends", color: "text-orange-500" },
-    { text: "managing your finances", color: "text-purple-500" },
-    { text: "staying organized", color: "text-teal-600" },
+    { text: "sharing expenses with friends", color: "text-orange-500" ,bg: "bg-orange-500"},
+    { text: "managing your finances", color: "text-purple-500" ,bg:"bg-purple-500"},
+    { text: "staying organized", color: "text-teal-600" , bg: "bg-teal-600"},
   ];
 const Home = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -121,9 +121,10 @@ bg-slate-200">
 
 
       <div className="mt-4 flex flex-col items-start justify-start">
-        <p className="text-sm sm:text-base lg:text-lg dark:text-slate-300 text-slate-700 text-left leading-relaxed">
+        <p className="text-sm sm:text-base lg:text-sm dark:text-slate-300 text-slate-700 text-left leading-relaxed">
           Are you struggling to maintain contributions and manage expenses during group trips? Expido is here with the solution. Expido provides a seamless platform for tracking shared expenses, organizing contributions, and keeping everyone on the same page. Whether you're traveling with friends or family, Expido ensures your trip is hassle-free, efficient, and memorable. Say goodbye to the confusion and hello to stress-free travel!
         </p>
+        <button className={`${phrases[currentIndex].bg} rounded-lg py-1 px-3 mt-4 items-start justify-start text-left text-white`}>Sign up</button>
       </div>
     </div>
   </div>

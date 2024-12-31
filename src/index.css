@@ -3,8 +3,40 @@
 @tailwind components;
 @tailwind utilities;
 
-*{
-    padding: 0;
-    margin: 0;
-    box-sizing: border-box;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* Scrollbar styles for light theme */
+::-webkit-scrollbar {
+  width: 2px; /* Width of the scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  background: #f9f4d7; /* Background for light theme */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #01dc93; /* Orange color for light theme */
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e66f00; /* Darker orange for hover */
+}
+
+/* Scrollbar styles for dark theme */
+.dark ::-webkit-scrollbar-track {
+  background: #0e0815; /* Background for dark theme */
+}
+
+.dark ::-webkit-scrollbar-thumb {
+  background: #42026c; /* Purple color for dark theme */
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #5a2a8a; /* Darker purple for hover */
 }
