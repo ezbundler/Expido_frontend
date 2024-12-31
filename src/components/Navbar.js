@@ -1,61 +1,55 @@
-import React, { useState } from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Link } from "react-router-dom";
 import {
-  AppBar,
-  Toolbar,
-  IconButton,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
+//   AppBar,
+//   Toolbar,
+//   IconButton,
+//   Drawer,
+//   List,
+//   ListItem,
+//   ListItemText,
   useMediaQuery,
-} from '@mui/material';
-import MenuIcon from '@mui/icons-material/Menu';
-import CloseIcon from '@mui/icons-material/Close';
-import styled from 'styled-components';
+  Button,
+} from "@mui/material";
+// import MenuIcon from "@mui/icons-material/Menu";
+// import CloseIcon from "@mui/icons-material/Close";
+import styled from "styled-components";
 import logo from "../images/navLogo.png";
-import ThemeToggle from './ThemeToggler';
+import ThemeToggle from "./ThemeToggler";
 
 const Logo = styled.img`
   height: 100px;
-//   width: auto;
+  //   width: auto;
   cursor: pointer;
 `;
 
 const Navbar = () => {
   const [drawerOpen, setDrawerOpen] = useState(false);
-  const isSmallScreen = useMediaQuery('(max-width: 768px)');
+  const isSmallScreen = useMediaQuery("(max-width: 768px)");
   const toggleDrawer = (open) => () => setDrawerOpen(open);
 
   return (
     <>
-      <nav  className="bg-slate-500 dark:bg-black justify-center border-b-4 dark:border-blue-600
-       items-center dark:border-b-4 border-orange-500" sx={{height:"5rem"}}>
-        <div className="flex lg:w-3/4 w-full justify-between px-4 items-center  ">
+      <nav
+        className="bg-slate-500 dark:bg-black border-b-4 dark:border-blue-600 border-orange-500 flex justify-center items-center"
+        style={{ height: "5rem" }}
+      >
+        <div className="flex lg:w-3/4 w-full justify-between px-4 items-center ">
           {/* Logo */}
           <Link to="/">
-            <Logo className="w-40  " src={logo} alt="Navbar Logo" />
+            <Logo className="w-40" src={logo} alt="Navbar Logo" />
           </Link>
 
-          
-          
-            <div className="flex gap-4 items-center">
-             
-              <ThemeToggle />
-            </div>
-         
-
-          {/* Hamburger Menu (visible on small screens) */}
-          {/* {isSmallScreen && (
-            <IconButton
-              edge="start"
-              color="inherit"
-              aria-label="menu"
-              onClick={toggleDrawer(true)}
+          <div className="flex gap-4 items-center">
+            <ThemeToggle />
+            <Button sx={{ color: "orange" }}>Login</Button>
+            <Button
+              variant="contained"
+              sx={{ color: "white", background: "#F97316" }}
             >
-              <MenuIcon />
-            </IconButton>
-          )} */}
+              Sign Up
+            </Button>
+          </div>
         </div>
       </nav>
 

@@ -2,8 +2,8 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { HomeContainer } from "../styles/HomeStyles";
 // import ThemeToggle from "../components/ThemeToggler";
-import homelogo from "../images/homeLogo.png";
-import TypingEffect from 'react-typing-effect';
+// import homelogo from "../images/homeLogo.png";
+// import TypingEffect from 'react-typing-effect';
 // Import images
 import Img14 from "../images/hero14.jpg";
 import Img13 from "../images/hero13.jpg";
@@ -98,9 +98,9 @@ bg-slate-200">
       {/* Left Section with Animated Carousel */}
 
       <div className="hero w-full lg:w-1/2 relative flex flex-col items-center justify-center dark:bg-black bg-slate-200 p-4">
-  <div className="border flex border-red-500 w-full h-auto items-center justify-center">
-    <div className="flex flex-col items-center justify-center w-full lg:w-[70%] border border-green-500 p-4">
-    <div className="flex flex-row items-start justify-start w-full h-auto border border-yellow-500">
+  <div className=" flex  w-full h-auto items-center justify-center">
+    <div className="flex flex-col items-center justify-center w-full lg:w-[70%]  p-4">
+    <div className="flex flex-row items-start justify-start w-full h-auto ">
   <h1 className="text-3xl sm:text-4xl lg:text-5xl text-black dark:text-white font-bold text-left leading-snug">
     Your Ultimate Companion for{" "}
     <br />
@@ -124,7 +124,13 @@ bg-slate-200">
         <p className="text-sm sm:text-base lg:text-sm dark:text-slate-300 text-slate-700 text-left leading-relaxed">
           Are you struggling to maintain contributions and manage expenses during group trips? Expido is here with the solution. Expido provides a seamless platform for tracking shared expenses, organizing contributions, and keeping everyone on the same page. Whether you're traveling with friends or family, Expido ensures your trip is hassle-free, efficient, and memorable. Say goodbye to the confusion and hello to stress-free travel!
         </p>
-        <button className={`${phrases[currentIndex].bg} rounded-lg py-1 px-3 mt-4 items-start justify-start text-left text-white`}>Sign up</button>
+        <motion.button
+        key={phrases[currentIndex].text}
+        initial={{ opacity: 0, y: 10 }} // Start invisible and slightly below
+        animate={{ opacity: 1, y: 0 }} // Fade in and move to position
+        exit={{ opacity: 0, y: -10 }} // Fade out and move slightly up
+        transition={{ duration: 2 }} // Smooth transition duration
+         className={`${phrases[currentIndex].bg} rounded-lg py-1 px-3 mt-4 items-start justify-start text-left text-white`}>Sign up</motion.button>
       </div>
     </div>
   </div>

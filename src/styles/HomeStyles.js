@@ -7,7 +7,7 @@ export const HomeContainer = tw.div`
   flex
 mx-[2rem]
 
-h-[80vh]
+h-[85vh]
  flex-wrap 
  lg:flex-row
 `;
